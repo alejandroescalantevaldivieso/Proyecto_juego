@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,12 +14,14 @@ public class Inventario_jugador : MonoBehaviour
     public int cantidad_tarjetas = 0;
     public int vida = 100;
     // Tiempo
-    public float tiempo = 120f;
+    public float tiempo = 20f;
     public TextMeshProUGUI txt_cantidad_tiempo;
     // Start is called before the first frame update
     void Start()
     {
-        txt_cantidad_vida.text = 100.ToString();
+        vida = 100;
+        tiempo = 20f;
+        txt_cantidad_vida.text = vida.ToString();
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class Inventario_jugador : MonoBehaviour
     {
         vida += cantidad;
 
-        // Evitar superar la vida máxima
+        // Evitar superar la vida maxima
         if (vida > 100)
         {
             vida = 100;

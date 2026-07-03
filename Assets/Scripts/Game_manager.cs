@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,23 +8,21 @@ public class Game_manager : MonoBehaviour
     public GameObject cnv_victoria;
     public GameObject cnv_derrota;
     public Inventario_jugador inventario_Jugador;
-    // Start is called before the first frame update
+
     void Start()
     {
         Time.timeScale = 1;
-        cnv_victoria.SetActive(false);
-        cnv_derrota.SetActive(false);
+        if (cnv_victoria != null) cnv_victoria.SetActive(false);
+        if (cnv_derrota != null) cnv_derrota.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(inventario_Jugador.vida == 0)
+        if (inventario_Jugador.vida <= 0)
         {
             Derrota();
         }
-
-        if(inventario_Jugador.cantidad_tarjetas == 3 || inventario_Jugador.tiempo == 0)
+        else if (inventario_Jugador.cantidad_tarjetas >= 3 || inventario_Jugador.tiempo <= 0)
         {
             Victoria();
         }
@@ -33,21 +31,21 @@ public class Game_manager : MonoBehaviour
     public void Derrota()
     {
         Time.timeScale = 0;
-        cnv_derrota.SetActive(true);
-        cnv_victoria.SetActive(false);
+        if (cnv_derrota != null) cnv_derrota.SetActive(true);
+        if (cnv_victoria != null) cnv_victoria.SetActive(false);
     }
+
     public void Victoria()
     {
         Time.timeScale = 0;
-        cnv_derrota.SetActive(false);
-        cnv_victoria.SetActive(true);
+        if (cnv_derrota != null) cnv_derrota.SetActive(false);
+        if (cnv_victoria != null) cnv_victoria.SetActive(true);
     }
 
-    // Ir al siguiente nivel 
     public void Continuar()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Scena03");
+        SceneManager.LoadScene("Scena03");   
     }
 
     public void Menu()

@@ -21,4 +21,5 @@ public class Canbiar_scenas : MonoBehaviour
     {
         SceneManager.LoadScene("Scena02");
     }
+    
 }
