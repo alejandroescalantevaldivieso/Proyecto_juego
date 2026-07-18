@@ -9529,7 +9529,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 5f268324a1e2e854d9d7aa78d7aa4fca, type: 2}
   m_BuildHeightMesh: 0
@@ -18278,6 +18278,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 599000428025436486, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
+      propertyPath: tiempo
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 599000428025436486, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
       propertyPath: txt_cantidad_vida
       value: 
       objectReference: {fileID: 1463732580}
@@ -18289,6 +18293,18 @@ PrefabInstance:
       propertyPath: txt_cantidad_tarjetas
       value: 
       objectReference: {fileID: 2139429846}
+    - target: {fileID: 6956547270428091634, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956547270428091634, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956547270428091634, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6956547270428091634, guid: c390a0c9a7fa9e14e804a97bf24402e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 499.31

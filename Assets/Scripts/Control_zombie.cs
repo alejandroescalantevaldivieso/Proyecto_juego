@@ -11,6 +11,7 @@ public class Control_zombie : MonoBehaviour
     public AudioClip sonido_persecucion;
     public AudioClip sonido_ataque;
     private Inventario_jugador inventario_jugador;
+    private PlayerHealth playerHealth;
     // Referencia al componente NavMeshAgent
     private NavMeshAgent agente;
 
@@ -27,6 +28,7 @@ public class Control_zombie : MonoBehaviour
 
     // Distancia a la que el zombie detecta al jugador
     public float rango;
+    public float rango_abandono = 15f;
 
     // Distancia actual entre zombie y jugador
     public float distancia;
@@ -52,6 +54,7 @@ public class Control_zombie : MonoBehaviour
         animador = GetComponent<Animator>();
 
         inventario_jugador = jugador.GetComponent<Inventario_jugador>();
+        playerHealth = jugador.GetComponent<PlayerHealth>();
 
         // Elegir un primer punto de patrulla
         ElegirNuevoDestino();
@@ -75,7 +78,7 @@ public class Control_zombie : MonoBehaviour
         }
 
         // Si está dentro del rango de detección, persigue
-        else if (distancia <= rango)
+        else if (distancia <= rango || (estadoActual == 1 && distancia <= rango_abandono))
         {
             Perseguir();
         }
@@ -149,7 +152,7 @@ public class Control_zombie : MonoBehaviour
 
         if (estadoActual != 1)
         {
-            Debug.Log("SONANDO: " + sonido_persecucion.name);
+            // Debug.Log("SONANDO: " + sonido_persecucion.name);
             estadoActual = 1;
 
             audio_zombie.Stop();
@@ -157,7 +160,7 @@ public class Control_zombie : MonoBehaviour
             audio_zombie.time = 0;
             audio_zombie.Play();
 
-             Debug.Log("CLIP ACTUAL: " + audio_zombie.clip.name);
+             // Debug.Log("CLIP ACTUAL: " + audio_zombie.clip.name);
         }
     }
 
@@ -177,7 +180,8 @@ public class Control_zombie : MonoBehaviour
         if (contadorAtaque >= tiempoEntreAtaques)
         {        
              
-            inventario_jugador.Recibir_dano(20);
+            if (inventario_jugador != null) inventario_jugador.Recibir_dano(20);
+            if (playerHealth != null) playerHealth.TakeDamage(20);
             contadorAtaque = 0f;
         }
 

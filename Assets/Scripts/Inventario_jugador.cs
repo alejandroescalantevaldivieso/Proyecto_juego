@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -20,8 +20,8 @@ public class Inventario_jugador : MonoBehaviour
     void Start()
     {
         vida = 100;
-        tiempo = 20f;
-        txt_cantidad_vida.text = vida.ToString();
+        
+        if (txt_cantidad_vida != null) txt_cantidad_vida.text = vida.ToString();
     }
 
     // Update is called once per frame
@@ -30,12 +30,12 @@ public class Inventario_jugador : MonoBehaviour
         if (tiempo > 0)
         {
              tiempo -= Time.deltaTime;
-             txt_cantidad_tiempo.text = Mathf.Ceil(tiempo).ToString();
+             if (txt_cantidad_tiempo != null) txt_cantidad_tiempo.text = Mathf.Ceil(tiempo).ToString();
         }
         else
         {
             tiempo = 0;
-            txt_cantidad_tiempo.text = "0";
+            if (txt_cantidad_tiempo != null) txt_cantidad_tiempo.text = "0";
 
         }
     }
@@ -43,7 +43,7 @@ public class Inventario_jugador : MonoBehaviour
     public void Agregar_tarjeta()
     {
         cantidad_tarjetas ++;
-        txt_cantidad_tarjetas.text = cantidad_tarjetas.ToString();
+        if (txt_cantidad_tarjetas != null) txt_cantidad_tarjetas.text = cantidad_tarjetas.ToString();
     }
     public void Recibir_dano(int cantidad)
     {
@@ -52,7 +52,7 @@ public class Inventario_jugador : MonoBehaviour
         {
             vida = 0;
         }
-        txt_cantidad_vida.text = vida.ToString();
+        if (txt_cantidad_vida != null) txt_cantidad_vida.text = vida.ToString();
     }
     public void Recuperar_vida(int cantidad)
     {
@@ -64,6 +64,6 @@ public class Inventario_jugador : MonoBehaviour
             vida = 100;
         }
 
-        txt_cantidad_vida.text = vida.ToString();
+        if (txt_cantidad_vida != null) txt_cantidad_vida.text = vida.ToString();
     }
 }

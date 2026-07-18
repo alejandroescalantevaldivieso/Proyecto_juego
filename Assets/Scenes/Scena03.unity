@@ -82111,7 +82111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e8fe75e33b8e3479dba51419c383e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoSobrevivencia: 120
+  tiempoSobrevivencia: 20
   textoTemporizador: {fileID: 1836610838}
   textoMisionCumplida: {fileID: 0}
   musicaFondo: {fileID: 343469086}
@@ -84983,7 +84983,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e2ce4925a0e993c42bf52e498fd2cb94, type: 2}
   m_BuildHeightMesh: 0
@@ -85472,7 +85472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538748216956b33418da341c96de2a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoParaGanar: 120
+  tiempoParaGanar: 20
   textoTiempo: {fileID: 0}
 --- !u!1001 &1924501491
 PrefabInstance:

@@ -16,6 +16,7 @@ public class Control_mujer : MonoBehaviour
     public float velocidad_agachado;
 
     public float velocidad_correr= 8;
+    
 
     public Rigidbody rb;
     public float fuerza_salto= 8f;
@@ -28,6 +29,7 @@ public class Control_mujer : MonoBehaviour
     {
         // cuando inicar el juego no puedo saltar
         puedo_saltar = false;
+        
         controler = GetComponent<Animator>();
 
         velocidad_inicial = velocidad_caminar;
@@ -45,7 +47,7 @@ public class Control_mujer : MonoBehaviour
     void Update()
     {
     mueve_x = Input.GetAxis("Horizontal");
-    mueve_y = Input.GetAxis("Vertical");
+        mueve_y = Input.GetAxis("Vertical");
 
     controler.SetFloat("valor_x", mueve_x);
 
